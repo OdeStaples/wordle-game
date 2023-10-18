@@ -1,0 +1,151 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+.wrapper{
+  width: 35rem;
+  margin: auto;
+}
+
+.project-title{
+  border-bottom: 0.3rem solid black;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.project-body{
+  display: flex;
+  flex-direction: column;
+}
+
+.reload-button{
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.spiral{
+  font-size: 4rem;
+  text-align: center;
+  animation: spiral 1.5s infinite linear;
+}
+/* To show hide the loader */
+.hidden {
+  visibility: hidden;
+}
+/* To hightlight correct letter */
+.correct {
+  background-color: darkgreen;
+  color: white;
+}
+/* To hightlight letters in the daily word */
+.close {
+  background-color: goldenrod;
+  color: white;
+}
+/* To hightlight worng letter */
+.wrong {
+  background-color: #888;
+  color: white; 
+}
+/* Flash the box */
+.invalid{
+  animation: flash 2s;
+}
+/* winner animation */
+.winner {
+  animation: rainbow 4s infinite linear;
+}
+
+div[class^='row-']{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0.7rem 0;
+}
+
+div[class^='box-']{
+  height: 6rem;
+  width: 6rem;
+  border: 0.4rem solid #ccc;
+  font-size: 3.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ANIMATIONS */
+
+/* flash animation */
+@keyframes flash {
+  5% {
+    border-color: crimson;
+  }
+  100% {
+    border-color: #ccc;
+  }
+}
+
+/* spiral animation */
+@keyframes spiral {
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+/* rainbow animation */
+@keyframes rainbow {
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  58% {
+    color: rgb(0, 127, 255);
+  }
+  66% {
+    color: rgb(0, 0, 255);
+  }
+  75% {
+    color: rgb(127, 0, 255);
+  }
+  83% {
+    color: rgb(255, 0, 255);
+  }
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
